@@ -83,7 +83,9 @@ echo "-----> Pre-launching Meteor to create packages assets and prevent bundling
 fi
 # </hack>
 
-HOME=$METEOR_DIR $METEOR build --directory $BUNDLE_DEST
+HOME=$METEOR_DIR $METEOR build --directory $BUNDLE_DEST --server $ROOT_URL
+echo "Bundling..."
+echo $HOME
 mv $BUNDLE_DEST/bundle "$COMPILE_DIR/app"
 rmdir $BUNDLE_DEST
 
